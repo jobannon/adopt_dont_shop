@@ -6,6 +6,6 @@
 <h2><%= @shelter.state   %></h2>
 <h2><%= @shelter.zip     %></h2>
 
-<%= link_to "Delete Shelter", "/shelters/#{@shelter.id}" %>
+<%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", method: :delete %>
 
 <%= link_to "Update Shelters Information", "/shelters/#{@shelter.id}/edit" %>

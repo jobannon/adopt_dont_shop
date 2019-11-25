@@ -9,7 +9,6 @@ class PetsController < ApplicationController
   end
 
   def show
-    binding.pry
-    @pets = Pet.find(params[:id])
+    @pet = Pet.find(params[:id])
   end
 end

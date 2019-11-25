@@ -1,6 +1,7 @@
 <h1>All Pets</h1>
 
 <% @pets.each do |pet| %>
+<%# <% binding.pry %> %>
   <img src= <%= pet.image_url %>>
   <h2><%= pet.name %></h2>
   <h2><%= pet.approximate_age%></h2>

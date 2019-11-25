@@ -14,49 +14,21 @@ shelter_2= Shelter.create!(name: "Blue Buffalo Shelter",
                           state: "CO",
                           zip: 80004
                         )
-expected = {
-  image_url: "https://i.imgur.com/O7Mstm0.jpg",
+dog_1= shelter_1.pets.create!(image_url: "https://i.imgur.com/O7Mstm0.jpg",
   name: "cowboy",
   approximate_age: 17,
   sex: "male",
-  shelter: shelter_1
-}
+)
 
-expected_2 = {
+dog_2= shelter_2.pets.create!(
   image_url: "https://i.imgur.com/UagaLGh.jpg",
   name: "cowgirl",
   approximate_age: 10,
   sex: "female",
-  shelter: shelter_2
-}
+)
 
-expected_3 =   {
-  image_url: "https://i.imgur.com/srpQrcj.jpg",
+dog_3 = shelter_1.pets.create!(  image_url: "https://i.imgur.com/srpQrcj.jpg",
   name: "justchillin",
   approximate_age: 20,
   sex: "female",
-  shelter: shelter_1
-}
-
-dog_1 = Pet.create!(
-  image_url: expected[:image_url],
-  name: expected[:name],
-  approximate_age: expected[:approximate_age],
-  sex: expected[:sex],
-  shelter: expected[:shelter]
-)
-dog_2 = Pet.create!(
-  image_url: expected_2[:image_url],
-  name: expected_2[:name],
-  approximate_age: expected_2[:approximate_age],
-  sex: expected_2[:sex],
-  shelter: expected_2[:shelter]
-)
-
-dog_3 = Pet.create!(
-  image_url: expected_3[:image_url],
-  name: expected_3[:name],
-  approximate_age: expected_3[:approximate_age],
-  sex: expected_3[:sex],
-  shelter: expected_3[:shelter]
 )

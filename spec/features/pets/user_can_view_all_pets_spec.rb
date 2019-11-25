@@ -56,7 +56,6 @@ RSpec.describe "as a visitor" do
 
     visit '/pets'
 
-     save_and_open_page
       expect(page).to have_css("img[src*='#{dog_1.image_url}']")
       expect(page).to have_content(dog_1.name)
       expect(page).to have_content(dog_1.approximate_age)

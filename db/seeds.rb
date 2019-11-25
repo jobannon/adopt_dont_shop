@@ -30,6 +30,14 @@ expected_2 = {
   shelter: shelter_2
 }
 
+expected_3 =   {
+  image_url: "https://i.imgur.com/srpQrcj.jpg",
+  name: "justchillin",
+  approximate_age: 20,
+  sex: "female",
+  shelter: shelter_1
+}
+
 dog_1 = Pet.create!(
   image_url: expected[:image_url],
   name: expected[:name],
@@ -43,4 +51,12 @@ dog_2 = Pet.create!(
   approximate_age: expected_2[:approximate_age],
   sex: expected_2[:sex],
   shelter: expected_2[:shelter]
+)
+
+dog_3 = Pet.create!(
+  image_url: expected_3[:image_url],
+  name: expected_3[:name],
+  approximate_age: expected_3[:approximate_age],
+  sex: expected_3[:sex],
+  shelter: expected_3[:shelter]
 )

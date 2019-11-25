@@ -1,13 +1,14 @@
 class PetsController < ApplicationController
   def index
-    @pets = Pet.all
+    if params[:shelter_id]
+      @shelter = Shelter.find(params[:id])
+      @pets = @shelter.pets.all
+    else
+      @pets = Pet.all
+    end
   end
 
   def show
-    # binding.pry
-    params[:id]
-    @shelter = Shelter.find(params[:id])
-    @pets = @shelter.pets.all
-
+    @pets = Pet.find(params[:id])
   end
 end

@@ -62,6 +62,7 @@ RSpec.describe "as a visitor" do
       expect(page).to have_content(dog_1.sex)
       expect(page).to have_content(dog_1.shelter.name)
 
+      expect(page).to have_css("img[src*='#{dog_2.image_url}']")
       expect(page).to have_content(dog_2.name)
       expect(page).to have_content(dog_2.approximate_age)
       expect(page).to have_content(dog_2.sex)

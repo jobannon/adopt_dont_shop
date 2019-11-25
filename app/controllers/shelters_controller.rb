@@ -26,19 +26,9 @@ class SheltersController < ApplicationController
   end
 
   def destroy
-    # @shelter = Shelter.find(params[:id])
-    # @shelter.destroy
     Shelter.destroy(params[:id])
     redirect_to "/shelters"
   end
-  # def update
-  #   task = Shelter.find(params[:id])
-  #   task.update({
-  #     title: params[:task][:description]
-  #   })
-  #   task.save
-  #   redirect_to "/shelters/#{shelter.id}"
-  # end
 
   private
   def shelter_params

@@ -8,6 +8,10 @@ class PetsController < ApplicationController
     end
   end
 
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+
   def show
     @pet = Pet.find(params[:id])
   end
@@ -16,9 +20,14 @@ class PetsController < ApplicationController
     @shelter = Shelter.find(params[:shelter_id])
   end
 
+  def update
+    @pet = Pet.find(params[:id])
+    @pet.update(pet_params)
+    redirect_to "/pets/#{@pet.id}"
+  end
+
   def create
     curr_shelter = Shelter.find(params[:shelter_id])
-    binding.pry
 
     Pet.create!({
       name: pet_params[:name],
@@ -28,8 +37,7 @@ class PetsController < ApplicationController
       sex: pet_params[:sex],
       shelter_id: curr_shelter.id
       })
-      binding.pry
-    # shelter.pet.create!(params[:shelter_id])
+
     redirect_to "/shelters/#{curr_shelter.id}/pets"
   end
 

@@ -1,12 +1,12 @@
-  <%# <% binding.pry %> %>
   <h1>Pets for this <%@pet.shelter.name%></h1>
 
-<%# <% @pets.each do |pet| %> %>
-  <%# <% binding.pry %> %>
+
   <img src= <%= @pet.image_url %>>
   <h2><%= @pet.name %></h2>
+  <h2><%= @pet.description %></h2>
   <h2><%= @pet.approximate_age%></h2>
   <h2><%= @pet.sex %></h2>
   <h2><%= @pet.shelter.name %></h2>
   <h2><%= @pet.adopt_status %></h2>
-<%# <% end %> %>
+
+  <%= link_to "Update This Pet", "/pets/#{@pet.id}/edit" %>

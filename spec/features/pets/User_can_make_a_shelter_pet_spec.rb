@@ -30,7 +30,7 @@ RSpec.describe "as a visitor" do
       click_button "Save New Pet Information"
 
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
-save_and_open_page
+      
       edited_pet = Pet.last
 
       expect(page).to have_css("img[src*='#{edited_pet.image_url}']")

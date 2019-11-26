@@ -13,9 +13,14 @@ Rails.application.routes.draw do
 
   get '/pets', to: "pets#index"
   get "/pets/:id", to: "pets#show"
+  get "/pets/:id/edit", to: "pets#edit"
+  patch '/pets/:id', to: "pets#update"
+
   get "/shelters/:shelter_id/pets/new", to: "pets#new"
 
   post "/shelters/:shelter_id/pets/new", to: "pets#create"
   #this is bad code but is repeating my action path.
   post "/shelters/:shelter_id/pets/shelters/:shelter_id/pets", to: "pets#create"
+
+
 end

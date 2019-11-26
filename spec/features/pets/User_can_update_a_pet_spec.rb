@@ -47,7 +47,7 @@ RSpec.describe "as a visitor" do
       click_button "Submit"
 
       edited_pet = Pet.last
-save_and_open_page
+      
       expect(page).to have_css("img[src*='#{edited_pet.image_url}']")
       expect(page).to have_content(edited_pet.name)
       expect(page).to have_content(edited_pet.description)

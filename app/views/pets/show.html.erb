@@ -10,3 +10,5 @@
   <h2><%= @pet.adopt_status %></h2>
 
   <%= link_to "Update This Pet", "/pets/#{@pet.id}/edit" %>
+  
+  <%= link_to "Delete This Pet", "/pets/#{@pet.id}", method: :delete %>

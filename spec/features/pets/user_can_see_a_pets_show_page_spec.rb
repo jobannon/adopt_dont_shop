@@ -60,7 +60,6 @@ RSpec.describe "as a vistor" do
 
     visit "/pets/#{dog_2.id}"
     expect(page).to have_css("img[src*='#{dog_2.image_url}']")
-
     expect(page).to have_content(dog_2.name)
     expect(page).to have_content(dog_2.approximate_age)
     expect(page).to have_content(dog_2.sex)

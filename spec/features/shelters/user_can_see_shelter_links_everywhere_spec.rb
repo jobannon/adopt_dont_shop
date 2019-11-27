@@ -91,4 +91,42 @@ RSpec.describe "as a visitor" do
     end
   end
 
+  describe "visit the pets show page" do
+    before(:each) do
+      @shelter_1= Shelter.create!(name: "tired shelter",
+                                address: "563 work all day",
+                                city: "denver",
+                                state: "CO",
+                                zip: 80204
+                              )
+
+      @dog_1 = @shelter_1.pets.create!(
+        image_url: "https://i.imgur.com/O7Mstm0.jpg",
+        name: "max",
+        approximate_age: 7,
+        sex: "male",
+      )
+      @dog_2 = @shelter_1.pets.create!(
+        image_url: "https://i.imgur.com/srpQrcj.jpg",
+        name: "max",
+        approximate_age: 22,
+        sex: "female",
+      )
+    end
+
+    it "has a link to the shelters home " do
+      visit "/pets/#{@dog_2.id}"
+
+      within "#pet-#{@dog_2.id}" do
+        click_link "#{@shelter_1.name}"
+      end
+
+      expect(page).to have_content(@shelter_1.name)
+      expect(page).to have_content(@shelter_1.address)
+      expect(page).to have_content(@shelter_1.city)
+      expect(page).to have_content(@shelter_1.state)
+      expect(page).to have_content(@shelter_1.zip)
+
+    end
+end
 end

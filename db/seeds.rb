@@ -1,13 +1,13 @@
 Shelter.destroy_all
 Pet.destroy_all
 
-shelter_1= Shelter.create!(name: "Purina Shelter",
+shelter_1= Shelter.create!(name: "Cowboy Shelter",
                           address: "123 some road",
                           city: "denver",
                           state: "CO",
                           zip: 80204
                         )
-j
+
 shelter_2= Shelter.create!(name: "Blue Buffalo Shelter",
                           address: "123 some other road",
                           city: "stapleton",
